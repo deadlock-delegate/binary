@@ -10,7 +10,7 @@ def write_bit8(data):
     Returns:
         bytes: bytes object containing value from data
     """
-    return pack('c', data)[1]
+    return pack('b', data)[1]
 
 
 def write_bit16(data):
@@ -22,7 +22,7 @@ def write_bit16(data):
     Returns:
         bytes: bytes object containing value from data
     """
-    return pack('s', data)[1]
+    return pack('h', data)[1]
 
 
 def write_bit32(data):

@@ -11,6 +11,7 @@ def write_low(data, nibble=None):
     Returns:
         bytes: bytes object containing data
     """
+    # todo: this is not right
     fmt = 'h{}'.format(nibble) if nibble else 'h'
     return pack(fmt, data)
 
@@ -25,5 +26,6 @@ def write_high(data, nibble=None):
     Returns:
         bytes: bytes object containing data
     """
+    # todo: this is not right
     fmt = 'H{}'.format(nibble) if nibble else 'H'
     return pack(fmt, data)

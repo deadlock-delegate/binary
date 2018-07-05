@@ -10,7 +10,7 @@ def read_bit8(data, offset=0):
     Returns:
         int
     """
-    return unpack_from('c', data, offset)[1]
+    return unpack_from('b', data, offset)[1]
 
 
 def read_bit16(data, offset=0):
@@ -22,7 +22,7 @@ def read_bit16(data, offset=0):
     Returns:
         int
     """
-    return unpack_from('s', data, offset)[1]
+    return unpack_from('h', data, offset)[1]
 
 
 def read_bit32(data, offset=0):
