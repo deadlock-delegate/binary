@@ -23,7 +23,7 @@ extras_require = {
 setup_requires = ['pytest-runner'] if {'pytest', 'test', 'ptr'}.intersection(sys.argv) else []
 
 setuptools.setup(
-    name='binary',
+    name='binary-helpers',
     description='A developer-experience focused wrapper around pack and unpack.',
     version='0.0.1',
     author='roks0n',
