@@ -25,7 +25,7 @@ setup_requires = ['pytest-runner'] if {'pytest', 'test', 'ptr'}.intersection(sys
 setuptools.setup(
     name='binary-helpers',
     description='A developer-experience focused wrapper around pack and unpack.',
-    version='0.0.3',
+    version='0.0.4',
     author='roks0n',
     author_email='haluzan.rok@gmail.com',
     url='https://github.com/deadlock-delegate/python-binary',
