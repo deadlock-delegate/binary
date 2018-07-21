@@ -10,7 +10,7 @@ def read_bit8(data, offset=0):
     Returns:
         int
     """
-    return unpack_from('B', data, offset)[1]
+    return unpack_from('B', data, offset)[0]
 
 
 def read_bit16(data, offset=0, endianness=False):
@@ -23,11 +23,11 @@ def read_bit16(data, offset=0, endianness=False):
         int
     """
     if endianness is True:
-        value = unpack_from('>H', data, offset)[1]  # big-endian
+        value = unpack_from('>H', data, offset)[0]  # big-endian
     elif endianness is False:
-        value = unpack_from('<H', data, offset)[1]  # little-endian
+        value = unpack_from('<H', data, offset)[0]  # little-endian
     elif endianness is None:
-        value = unpack_from('=H', data, offset)[1]  # machine byte order
+        value = unpack_from('=H', data, offset)[0]  # machine byte order
     else:
         raise Exception('Invalid value "{}" for endianness given'.format(endianness))
     return value
@@ -43,11 +43,11 @@ def read_bit32(data, offset=0, endianness=False):
         int
     """
     if endianness is True:
-        value = unpack_from('>L', data, offset)[1]  # big-endian
+        value = unpack_from('>L', data, offset)[0]  # big-endian
     elif endianness is False:
-        value = unpack_from('<L', data, offset)[1]  # little-endian
+        value = unpack_from('<L', data, offset)[0]  # little-endian
     elif endianness is None:
-        value = unpack_from('L', data, offset)[1]  # machine byte order
+        value = unpack_from('L', data, offset)[0]  # machine byte order
     else:
         raise Exception('Invalid value "{}" for endianness given'.format(endianness))
     return value
@@ -63,11 +63,11 @@ def read_bit64(data, offset=0, endianness=False):
         int
     """
     if endianness is True:
-        value = unpack_from('>Q', data, offset)[1]  # big-endian
+        value = unpack_from('>Q', data, offset)[0]  # big-endian
     elif endianness is False:
-        value = unpack_from('<Q', data, offset)[1]  # little-endian
+        value = unpack_from('<Q', data, offset)[0]  # little-endian
     elif endianness is None:
-        value = unpack_from('Q', data, offset)[1]  # machine byte order
+        value = unpack_from('Q', data, offset)[0]  # machine byte order
     else:
         raise Exception('Invalid value "{}" for endianness given'.format(endianness))
     return value
