@@ -1,4 +1,5 @@
-from struct import unpack_from
+from binascii import unhexlify
+from struct import pack, unpack_from
 
 
 def read_low(data, offset=0, nibble=None):
@@ -31,3 +32,27 @@ def read_high(data, offset=0, nibble=None):
     # todo: this is not right
     fmt = 'H{}'.format(nibble) if nibble else 'H'
     return unpack_from(fmt, data, offset)[1]
+
+
+def write_low(data):
+    """Write a hex string with low nibble first
+
+    Args:
+        data (int)
+
+    Returns:
+        bytes: bytes object containing data
+    """
+    return pack('<B', data)
+
+
+def write_high(data):
+    """Write a hex string with high nibble first
+
+    Args:
+        data (int)
+
+    Returns:
+        bytes: bytes object containing data
+    """
+    return unhexlify(data)
